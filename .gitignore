@@ -1,3 +1,5 @@
 /venv
 __pycache__
 localhost.env
+launch.json
+credential_key.json
