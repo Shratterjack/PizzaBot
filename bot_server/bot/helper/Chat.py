@@ -1,10 +1,10 @@
 import dialogflow_v2 as dialogflow
-
+import os
 
 class Chat:
     def __init__(self,sessionId):
         self.sessionId = sessionId
-        self.project_id = 'elated-pathway-270514'
+        self.project_id = os.environ['PROJECT_ID']
         self.client = dialogflow.SessionsClient()
 
 
@@ -22,9 +22,5 @@ class Chat:
 
         response = self.client.detect_intent(session=session, query_input=query_input)
 
-        print('Query text: {}'.format(response.query_result.query_text))
-        print('Detected intent: {} (confidence: {})\n'.format(
-        response.query_result.intent.display_name, response.query_result.intent_detection_confidence))
-        print('Fulfillment text: {}\n'.format(response.query_result.fulfillment_text))
         return response.query_result.fulfillment_text
     

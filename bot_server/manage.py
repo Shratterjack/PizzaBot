@@ -2,6 +2,31 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from dotenv import load_dotenv
+
+
+
+fileloader = {
+    "dialogflow":{
+        'filename': 'credential_key.json',
+        'name': "GOOGLE_APPLICATION_CREDENTIALS"
+    },
+    "env":{
+        'filename': 'localhost.env',
+        'name':"env"
+    }
+}
+
+# for loading all necessary configuration files
+def loadFiles(params):
+    FILE_NAME = params['filename']
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    path = os.path.join(current_directory, FILE_NAME)
+    os.environ[params['name']] = path
+
+loadFiles(fileloader['dialogflow'])
+loadFiles(fileloader['env'])
+load_dotenv(os.environ['env'])
 
 
 def main():
