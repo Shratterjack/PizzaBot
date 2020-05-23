@@ -3,3 +3,4 @@ __pycache__
 localhost.env
 launch.json
 credential_key.json
+node_modules
