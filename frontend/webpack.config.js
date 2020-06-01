@@ -1,6 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    entry:{
+        app: ['./src/index.js']
+
+    },
     module: {
         rules: [
             {
@@ -9,7 +13,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },
+            },            
             {
                 test: /\.html$/,
                 use: [
@@ -17,6 +21,10 @@ module.exports = {
                         loader: "html-loader"
                     }
                 ]
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
@@ -25,5 +33,8 @@ module.exports = {
             template: "./src/index.html",
             filename: "./index.html"
         })
-    ]
+    ],
+    // devServer: {
+    //     watchContentBase: true,
+    // },
 };
