@@ -37,7 +37,8 @@
 
 .bot-message-box{
   width: 100px;
-  background-color:#64e764;
+  /* background-color:#75ea75; */
+  background-color:#0079f1;
   margin-left: 10px;
   margin-top: 10px;
   height: 40px;
@@ -46,11 +47,16 @@
 
 .chat-message-box{
   width: 100px;
-  background-color:#0079f1;
+  /* background-color:#f8f8ff; */
   margin-right: 10px;
   margin-top: 10px;
   height: 40px;
   float:right;
+  border:1px solid 
+  /* border-style: light;
+  border-color:gray;
+  border-radius: 5px; */
+
 }
 
 .bot-message-text{

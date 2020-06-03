@@ -5,6 +5,11 @@ class BotBody extends Component {
         super(props);
     }
 
+   componentWillMount(){
+
+   }
+
+
     render(){
         return(
             <div className="chatbody">
@@ -21,7 +26,7 @@ class BotBody extends Component {
                     </li>
                     <li className="media">
                         <div className="media-body">
-                            <div className="chat-message-box border border-light rounded">
+                            <div className="chat-message-box ">
                                 <div className="bot-message-text">
                                     <span>hello world</span>
                                 </div>
